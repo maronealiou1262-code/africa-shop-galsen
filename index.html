@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Africa Shop Galsen | Mode sénégalaise & Wax</title>
+  <meta name="description" content="Tenues sénégalaises modernes, wax premium, plage afro-chic, sacs et sacoches. Panier + commande WhatsApp avec récap automatique." />
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --ink:#111;
+      --muted:#5b5b5b;
+      --card:#fff;
+      --dark:#0f0f0f;
+      --gold:#c9a24d;
+      --green:#25D366;
+      --red:#e84b4b;
+      --shadow:0 16px 36px rgba(0,0,0,.10);
+      --shadow2:0 20px 50px rgba(0,0,0,.14);
+      --radius:16px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background:var(--bg);
+      color:var(--ink);
+    }
+    a{color:inherit}
+    img{display:block; max-width:100%}
+
+    /* Top trust bar */
+    .topbar{
+      background:#0b0b0b;
+      color:#eaeaea;
+      font-size:13px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar .wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:10px 16px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .trust-pills{display:flex; gap:8px; flex-wrap:wrap}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      color:#eaeaea;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    /* Nav */
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(15,15,15,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    nav .wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:12px 16px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background:linear-gradient(135deg, rgba(201,162,77,1), rgba(255,255,255,.12));
+      box-shadow:0 10px 24px rgba(201,162,77,.22);
+    }
+    .brand strong{color:var(--gold); letter-spacing:.5px}
+    .brand span{display:block; color:#d6d6d6; font-size:12px; margin-top:2px}
+    .links{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .links a{
+      color:#f1f1f1;
+      text-decoration:none;
+      font-size:14px;
+      padding:9px 10px;
+      border-radius:12px;
+      transition:.2s;
+    }
+    .links a:hover{background:rgba(255,255,255,.08)}
+    .btn{
+      border:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:999px;
+      padding:12px 16px;
+      font-weight:900;
+      font-size:14px;
+      cursor:pointer;
+      text-decoration:none;
+      transition:.2s;
+      white-space:nowrap;
+    }
+    .btn.primary{background:var(--green); color:#fff; box-shadow:0 16px 26px rgba(37,211,102,.22)}
+    .btn.primary:hover{transform:translateY(-1px)}
+    .btn.dark{background:rgba(255,255,255,.10); color:#fff; border:1px solid rgba(255,255,255,.16)}
+    .btn.dark:hover{background:rgba(255,255,255,.14)}
+    .cart-btn{
+      position:relative;
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.16);
+    }
+    .badge-count{
+      position:absolute;
+      top:-6px; right:-6px;
+      width:22px; height:22px;
+      border-radius:999px;
+      background:var(--gold);
+      color:#111;
+      display:grid;
+      place-items:center;
+      font-size:12px;
+      font-weight:900;
+      box-shadow:0 10px 20px rgba(0,0,0,.22);
+    }
+
+    /* Hero */
+    header.hero{
+      min-height:72vh;
+      padding:56px 16px 36px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.30)),
+        url("https://images.unsplash.com/photo-1520975958225-0b9fe2f7f7d8?auto=format&fit=crop&w=2200&q=80")
+        center/cover no-repeat;
+      color:#fff;
+      display:grid;
+      align-items:center;
+    }
+    .hero .wrap{
+      max-width:var(--max);
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      align-items:center;
+    }
+    .hero h1{margin:0 0 10px; font-size:42px; line-height:1.05}
+    .hero p{margin:0 0 16px; color:rgba(255,255,255,.92); line-height:1.6; max-width:68ch}
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap}
+
+    .hero-card{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:var(--radius);
+      padding:16px;
+      backdrop-filter: blur(10px);
+      box-shadow:0 20px 45px rgba(0,0,0,.22);
+    }
+    .hero-card h3{margin:0 0 10px; color:var(--gold); font-size:16px}
+    .hero-card ul{margin:0; padding:0; list-style:none; display:grid; gap:10px}
+    .hero-card li{color:rgba(255,255,255,.92); font-size:14px; line-height:1.5}
+
+    /* Sections */
+    section{padding:64px 16px}
+    .wrap{max-width:var(--max); margin:auto}
+    .title{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .title h2{margin:0; font-size:30px}
+    .title p{margin:0; color:var(--muted); max-width:75ch; line-height:1.5}
+
+    /* Filters */
+    .filters{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 16px}
+    .chip{
+      border:1px solid rgba(0,0,0,.10);
+      background:#fff;
+      padding:10px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:800;
+      font-size:13px;
+      box-shadow:0 10px 18px rgba(0,0,0,.05);
+      transition:.2s;
+    }
+    .chip.active{
+      background:rgba(201,162,77,.16);
+      border-color:rgba(201,162,77,.35);
+    }
+
+    /* Product grid */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:16px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(0,0,0,.06);
+      transition:.22s;
+    }
+    .card:hover{transform:translateY(-6px); box-shadow:var(--shadow2)}
+    .card .img{height:260px; background:#eee; position:relative}
+    .card .img img{width:100%; height:100%; object-fit:cover}
+    .tag{
+      position:absolute;
+      top:12px; left:12px;
+      background:rgba(0,0,0,.65);
+      color:#fff;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(6px);
+    }
+    .card .content{padding:14px}
+    .card h3{margin:0 0 6px; font-size:16px}
+    .card p{margin:0 0 10px; color:var(--muted); font-size:14px; line-height:1.45}
+    .row{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .price{font-weight:1000; color:#1a1a1a}
+    .small{color:var(--muted); font-size:12px}
+    .select{
+      width:100%;
+      padding:10px 10px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.12);
+      background:#fff;
+      font-weight:700;
+      margin:8px 0 10px;
+    }
+    .add{
+      background:#111;
+      color:#fff;
+      border:none;
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:900;
+      transition:.2s;
+      width:100%;
+    }
+    .add:hover{transform:translateY(-1px)}
+
+    /* Trust blocks */
+    .trust{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    .trust .box{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow:0 12px 24px rgba(0,0,0,.05);
+    }
+    .trust strong{display:block; margin-bottom:6px}
+    .trust span{color:var(--muted); line-height:1.55; font-size:14px}
+
+    /* Footer */
+    footer{
+      background:#0b0b0b;
+      color:#cfcfcf;
+      padding:22px 16px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    footer .wrap{
+      max-width:var(--max);
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    /* Floating WA */
+    .wa-float{
+      position:fixed;
+      right:16px; bottom:16px;
+      z-index:2500;
+      text-decoration:none;
+      background:var(--green);
+      color:#fff;
+      font-weight:1000;
+      padding:14px 16px;
+      border-radius:999px;
+      box-shadow:0 20px 34px rgba(37,211,102,.30);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    /* Modal */
+    .modal{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.55);
+      display:none;
+      z-index:3000;
+      padding:18px;
+    }
+    .modal.open{display:grid; place-items:center}
+    .panel{
+      width:min(920px, 100%);
+      background:#fff;
+      border-radius:18px;
+      box-shadow:0 30px 80px rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .panel header{
+      padding:14px 16px;
+      background:#111;
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    .panel header strong{color:var(--gold)}
+    .panel header button{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:900;
+    }
+    .panel .body{
+      padding:16px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:14px;
+    }
+    .cart-items{
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:16px;
+      padding:12px;
+      min-height:160px;
+    }
+    .item{
+      display:grid;
+      grid-template-columns:60px 1fr auto;
+      gap:10px;
+      padding:10px 0;
+      border-top:1px solid rgba(0,0,0,.06);
+      align-items:center;
+    }
+    .item:first-child{border-top:none}
+    .thumb{
+      width:60px; height:60px;
+      border-radius:14px;
+      overflow:hidden;
+      background:#eee;
+    }
+    .thumb img{width:100%; height:100%; object-fit:cover}
+    .item h4{margin:0; font-size:14px}
+    .item .meta{margin-top:4px; font-size:12px; color:var(--muted)}
+    .qty{display:flex; gap:8px; align-items:center; justify-content:flex-end; flex-wrap:wrap}
+    .qty button{
+      width:34px; height:34px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.12);
+      background:#fff;
+      cursor:pointer;
+      font-weight:900;
+    }
+    .qty .remove{border-color:rgba(232,75,75,.35); color:var(--red)}
+    .summary{
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:16px;
+      padding:12px;
+      display:grid;
+      gap:10px;
+      align-content:start;
+    }
+    .summary label{font-weight:900; font-size:13px}
+    .summary input, .summary textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,.12);
+      background:#fff;
+      font-weight:700;
+      outline:none;
+    }
+    .summary textarea{min-height:92px; resize:vertical; font-weight:600}
+    .tot{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:12px; border-radius:14px;
+      background:rgba(201,162,77,.14);
+      border:1px solid rgba(201,162,77,.30);
+      font-weight:1000;
+    }
+    .actions2{display:flex; gap:10px; flex-wrap:wrap}
+    .actions2 .btn2{
+      flex:1; min-width:220px;
+      border:none; border-radius:14px;
+      padding:12px 14px;
+      font-weight:1000;
+      cursor:pointer;
+      transition:.2s;
+    }
+    .actions2 .btn2.wa{background:var(--green); color:#fff}
+    .actions2 .btn2.wa:hover{transform:translateY(-1px)}
+    .actions2 .btn2.clear{background:#fff; border:1px solid rgba(0,0,0,.12)}
+    .hint{color:var(--muted); font-size:12px; line-height:1.5}
+
+    @media (max-width: 920px){
+      .hero .wrap{grid-template-columns:1fr}
+      .panel .body{grid-template-columns:1fr}
+      .hero h1{font-size:38px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="trust-pills">
+        <span class="pill">Récap commande automatique</span>
+        <span class="pill">Validation avant préparation</span>
+        <span class="pill">Photos réelles</span>
+      </div>
+      <a class="pill" href="https://wa.me/221786093805?text=Bonjour%20Africa%20Shop%20Galsen%2C%20je%20souhaite%20des%20informations" target="_blank" rel="noopener">
+        WhatsApp : +221 78 609 38 05
+      </a>
+    </div>
+  </div>
+
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="#accueil">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <strong>Africa Shop Galsen</strong>
+          <span>Afro-chic • Wax • Plage • Accessoires</span>
+        </div>
+      </a>
+
+      <div class="links">
+        <a href="#boutique">Boutique</a>
+        <a href="#confiance">Confiance</a>
+        <button class="btn cart-btn" id="openCart">Panier <span class="badge-count" id="cartCount">0</span></button>
+        <a class="btn primary" href="https://wa.me/221786093805?text=Bonjour%20Africa%20Shop%20Galsen%2C%20je%20veux%20commander" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="accueil">
+    <div class="wrap">
+      <div>
+        <h1>Des tenues wax réelles, modernes, rassurantes.</h1>
+        <p>
+          Ajoute au panier, puis envoie le récap sur WhatsApp. Le client voit des photos réelles, des infos claires, et tu valides tout avant préparation.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#boutique">Voir la boutique</a>
+          <button class="btn dark" id="openCart2">Ouvrir le panier</button>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Pourquoi les clients te font confiance</h3>
+        <ul>
+          <li><strong>Récap automatique :</strong> articles, tailles, quantités, ville — tout est écrit.</li>
+          <li><strong>Validation :</strong> tu confirmes prix final, délai, disponibilité.</li>
+          <li><strong>Photos réelles :</strong> tu montres le vrai produit, pas du “hasard”.</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section id="boutique">
+    <div class="wrap">
+      <div class="title">
+        <div>
+          <h2>Boutique</h2>
+          <p>Filtre par catégorie. La catégorie Wax affiche tes 2 vraies photos si elles sont dans le dossier <strong>images</strong>.</p>
+        </div>
+      </div>
+
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <section id="confiance">
+    <div class="wrap">
+      <div class="title">
+        <div>
+          <h2>Confiance & transparence</h2>
+          <p>Ce qui rassure un client : clarté, preuves, et communication directe.</p>
+        </div>
+      </div>
+
+      <div class="trust">
+        <div class="box">
+          <strong>Photo/vidéo avant livraison</strong>
+          <span>Tu peux envoyer une preuve WhatsApp de l’article final avant l’envoi.</span>
+        </div>
+        <div class="box">
+          <strong>Validation claire</strong>
+          <span>Tu confirmes : disponibilité, taille, prix final, délai. Rien n’est flou.</span>
+        </div>
+        <div class="box">
+          <strong>Livraison annoncée</strong>
+          <span>Dakar / Sénégal / diaspora : précise tes zones et délais pour rassurer.</span>
+        </div>
+        <div class="box">
+          <strong>Échange (à préciser)</strong>
+          <span>Tu peux proposer échange si la taille ne convient pas, selon conditions.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>© 2026 Africa Shop Galsen — Dakar, Sénégal</div>
+      <div>Commande WhatsApp : +221 78 609 38 05</div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/221786093805?text=Bonjour%20Africa%20Shop%20Galsen%2C%20je%20veux%20des%20infos" target="_blank" rel="noopener">WhatsApp</a>
+
+  <!-- CART MODAL -->
+  <div class="modal" id="cartModal" aria-hidden="true">
+    <div class="panel" role="dialog" aria-modal="true" aria-label="Panier">
+      <header>
+        <div><strong>Panier</strong> — Africa Shop Galsen</div>
+        <button id="closeCart">Fermer</button>
+      </header>
+
+      <div class="body">
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="summary">
+          <div class="tot">
+            <div>Total estimé</div>
+            <div id="cartTotal">0 FCFA</div>
+          </div>
+
+          <div>
+            <label for="custName">Nom</label>
+            <input id="custName" type="text" placeholder="Ex: Anna / John / Awa" />
+          </div>
+
+          <div>
+            <label for="custCity">Ville de livraison</label>
+            <input id="custCity" type="text" placeholder="Ex: Dakar / Saly / Paris..." />
+          </div>
+
+          <div>
+            <label for="custNotes">Détails</label>
+            <textarea id="custNotes" placeholder="Ex: couleur, tissu, délai, livraison..."></textarea>
+          </div>
+
+          <div class="actions2">
+            <button class="btn2 wa" id="checkoutWhatsApp">Commander sur WhatsApp</button>
+            <button class="btn2 clear" id="clearCart">Vider</button>
+          </div>
+
+          <div class="hint">
+            Le bouton WhatsApp envoie un message avec le récap. Tu valides ensuite la commande avec le client.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const WHATSAPP_NUMBER = "221786093805";
+
+    // IMPORTANT
+    // Mets ces 2 images dans le dossier "images/" à côté de index.html :
+    // - images/robe-wax.jpg  (ta photo bleue mannequin)
+    // - images/tenue-wax.jpg (ta photo violette)
+    //
+    // Si elles ne sont pas là, le site affichera les images web (remoteImg).
+    const PRODUCTS = [
+      // WAX (photos réelles)
+      {
+        id: "robe-wax",
+        name: "Robe wax moderne (photo réelle)",
+        category: "Wax",
+        price: 15000,
+        sizes: ["S", "M", "L", "XL"],
+        localImg: "images/robe-wax.jpg",
+        remoteImg: "https://i.pinimg.com/originals/74/11/1f/74111f5e12a76565e60c3b974f0357a2.jpg",
+        desc: "Robe wax moderne avec photo réelle. Coupe propre, facile à porter à l'étranger."
+      },
+      {
+        id: "tenue-wax",
+        name: "Tenue wax premium (photo réelle)",
+        category: "Wax",
+        price: 20000,
+        sizes: ["S", "M", "L", "XL"],
+        localImg: "images/tenue-wax.jpg",
+        remoteImg: "https://th.bing.com/th/id/R.7f90a47fc25fb90d8be4244b3a38175e?rik=EkeURA0qlN3kZQ&pid=ImgRaw&r=0",
+        desc: "Tenue wax premium avec photo réelle. Look afro-chic qui attire les étrangers."
+      },
+
+      // Plage
+      {
+        id: "kimono-plage",
+        name: "Kimono de plage sénégalais",
+        category: "Plage",
+        price: 18000,
+        sizes: ["S", "M" , "L"],
+        localImg: "",
+        remoteImg: "https://i.pinimg.com/originals/9f/ca/a3/9fcaa35cbb83e49b0ab042d7810a3acb.jpg",
+        desc: "Style vacances (Saly/Gorée), chic sur maillot ou tenue légère."
+      },
+      {
+        id: "ensemble-ete",
+        name: "Ensemble léger (short + top)",
+        category: "Plage",
+        price: 22000,
+        sizes: ["S", "M", "L"],
+        localImg: "",
+        remoteImg: "https://tse3.mm.bing.net/th/id/OIP.JU0BdUXQ1wi5C1fD-L1m7AHaLG?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3",
+        desc: "Confort + style. Très apprécié par touristes et diaspora."
+      },
+
+      // Accessoires
+      {
+        id: "sac-wax",
+        name: "Sac en wax Africain",
+        category: "Accessoires",
+        price: 12000,
+        sizes: ["Unique"],
+        localImg: "",
+        remoteImg: "https://tse3.mm.bing.net/th/id/OIP.GCRHmxmSK8iK14WeCKAwDQHaHa?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3",
+        desc: "Simple, élégant, achat facile pour les étrangers."
+      },
+      {
+        id: "sacoche-wax",
+        name: "Sacoche wax (urbain)",
+        category: "Accessoires",
+        price: 10000,
+        sizes: ["Unique"],
+        localImg: "images/sacoche-wax.jpg",
+        remoteImg: "https://www.sacs-de-voyage.com/wp-content/uploads/2024/02/sac-a-main-wax.jpg",
+        desc: "Pratique, stylé, identité africaine sans exagération. (Ajoute ta photo dans images/ si tu veux.)"
+      },
+
+      // Best sellers
+      {
+        id: "best-afrochic",
+        name: "Robe afro-chic (best seller)",
+        category: "Best sellers",
+        price: 30000,
+        sizes: ["S", "M", "L", "XL"],
+        localImg: "",
+        remoteImg: "https://tse3.mm.bing.net/th/id/OIP.DgrJbvCSspftLHl8lsuszQHaOx?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3",
+        desc: "Look clean, moderne, très “étranger-friendly”."
+      }
+    ];
+
+    const state = {
+      filter: "Tous",
+      cart: JSON.parse(localStorage.getItem("asg_cart") || "[]")
+    };
+
+    const productGrid = document.getElementById("productGrid");
+    const filters = document.getElementById("filters");
+    const cartCount = document.getElementById("cartCount");
+
+    const cartModal = document.getElementById("cartModal");
+    const cartItemsEl = document.getElementById("cartItems");
+    const cartTotalEl = document.getElementById("cartTotal");
+
+    const openCart = () => { cartModal.classList.add("open"); renderCart(); };
+    const closeCart = () => cartModal.classList.remove("open");
+
+    document.getElementById("openCart").addEventListener("click", openCart);
+    document.getElementById("openCart2").addEventListener("click", openCart);
+    document.getElementById("closeCart").addEventListener("click", closeCart);
+
+    cartModal.addEventListener("click", (e) => { if(e.target === cartModal) closeCart(); });
+
+    function money(n){
+      return new Intl.NumberFormat("fr-FR").format(n) + " FCFA";
+    }
+    function persist(){
+      localStorage.setItem("asg_cart", JSON.stringify(state.cart));
+    }
+    function countItems(){
+      return state.cart.reduce((acc, it) => acc + it.qty, 0);
+    }
+    function setBadge(){
+      cartCount.textContent = String(countItems());
+    }
+
+    function getCategories(){
+      const cats = new Set(PRODUCTS.map(p => p.category));
+      return ["Tous", ...cats];
+    }
+
+    function renderFilters(){
+      filters.innerHTML = "";
+      getCategories().forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = "chip" + (state.filter === cat ? " active" : "");
+        btn.textContent = cat;
+        btn.addEventListener("click", () => {
+          state.filter = cat;
+          renderFilters();
+          renderProducts();
+        });
+        filters.appendChild(btn);
+      });
+    }
+
+    function renderProducts(){
+      const items = state.filter === "Tous"
+        ? PRODUCTS
+        : PRODUCTS.filter(p => p.category === state.filter);
+
+      productGrid.innerHTML = "";
+      items.forEach(p => {
+        const card = document.createElement("article");
+        card.className = "card";
+
+        const src = (p.localImg && p.localImg.trim()) ? p.localImg : p.remoteImg;
+
+        card.innerHTML = `
+          <div class="img">
+            <span class="tag">${p.category}</span>
+            <img src="${src}" alt="${p.name}" onerror="this.onerror=null;this.src='${p.remoteImg}';" />
+          </div>
+          <div class="content">
+            <h3>${p.name}</h3>
+            <p>${p.desc}</p>
+
+            <div class="row">
+              <div>
+                <div class="price">${money(p.price)}</div>
+                <div class="small">Prix indicatif • confirmé sur WhatsApp</div>
+              </div>
+            </div>
+
+            <select class="select" data-size="${p.id}">
+              ${p.sizes.map(s => `<option value="${s}">Taille: ${s}</option>`).join("")}
+            </select>
+
+            <button class="add" data-add="${p.id}">Ajouter au panier</button>
+          </div>
+        `;
+
+        productGrid.appendChild(card);
+      });
+
+      document.querySelectorAll("[data-add]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-add");
+          const p = PRODUCTS.find(x => x.id === id);
+          const sizeSelect = document.querySelector(`[data-size="${id}"]`);
+          const size = sizeSelect ? sizeSelect.value : "Unique";
+          addToCart(p, size);
+        });
+      });
+    }
+
+    function addToCart(product, size){
+      const key = product.id + "::" + size;
+      const existing = state.cart.find(it => it.key === key);
+
+      if(existing){
+        existing.qty += 1;
+      } else {
+        state.cart.push({
+          key,
+          id: product.id,
+          name: product.name,
+          size,
+          price: product.price,
+          imgLocal: product.localImg,
+          imgRemote: product.remoteImg,
+          qty: 1
+        });
+      }
+
+      persist();
+      setBadge();
+      openCart();
+    }
+
+    function cartTotal(){
+      return state.cart.reduce((acc, it) => acc + it.price * it.qty, 0);
+    }
+
+    function renderCart(){
+      if(state.cart.length === 0){
+        cartItemsEl.innerHTML = `<div class="hint">Ton panier est vide. Ajoute un article pour commander.</div>`;
+      } else {
+        cartItemsEl.innerHTML = state.cart.map(it => {
+          const src = (it.imgLocal && it.imgLocal.trim()) ? it.imgLocal : it.imgRemote;
+          return `
+            <div class="item">
+              <div class="thumb">
+                <img src="${src}" alt="${it.name}" onerror="this.onerror=null;this.src='${it.imgRemote}';" />
+              </div>
+              <div>
+                <h4>${it.name}</h4>
+                <div class="meta">Taille: ${it.size} • ${money(it.price)}</div>
+              </div>
+              <div class="qty">
+                <button data-minus="${it.key}">-</button>
+                <div style="font-weight:1000; min-width:22px; text-align:center;">${it.qty}</div>
+                <button data-plus="${it.key}">+</button>
+                <button class="remove" data-remove="${it.key}">Suppr.</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        cartItemsEl.querySelectorAll("[data-minus]").forEach(b => b.addEventListener("click", () => changeQty(b.dataset.minus, -1)));
+        cartItemsEl.querySelectorAll("[data-plus]").forEach(b => b.addEventListener("click", () => changeQty(b.dataset.plus, +1)));
+        cartItemsEl.querySelectorAll("[data-remove]").forEach(b => b.addEventListener("click", () => removeItem(b.dataset.remove)));
+      }
+
+      cartTotalEl.textContent = money(cartTotal());
+      setBadge();
+    }
+
+    function changeQty(key, delta){
+      const it = state.cart.find(x => x.key === key);
+      if(!it) return;
+      it.qty += delta;
+      if(it.qty <= 0){
+        state.cart = state.cart.filter(x => x.key !== key);
+      }
+      persist();
+      renderCart();
+    }
+
+    function removeItem(key){
+      state.cart = state.cart.filter(x => x.key !== key);
+      persist();
+      renderCart();
+    }
+
+    document.getElementById("clearCart").addEventListener("click", () => {
+      state.cart = [];
+      persist();
+      renderCart();
+    });
+
+    document.getElementById("checkoutWhatsApp").addEventListener("click", () => {
+      if(state.cart.length === 0){
+        alert("Ton panier est vide.");
+        return;
+      }
+
+      const name = document.getElementById("custName").value.trim();
+      const city = document.getElementById("custCity").value.trim();
+      const notes = document.getElementById("custNotes").value.trim();
+
+      const lines = [];
+      lines.push("Bonjour Africa Shop Galsen, je veux passer une commande :");
+      lines.push("");
+
+      state.cart.forEach((it, idx) => {
+        lines.push(`${idx+1}) ${it.name}`);
+        lines.push(`   - Taille: ${it.size}`);
+        lines.push(`   - Quantité: ${it.qty}`);
+        lines.push(`   - Prix indicatif: ${money(it.price)} (x${it.qty})`);
+      });
+
+      lines.push("");
+      lines.push(`Total estimé: ${money(cartTotal())}`);
+      lines.push("");
+      lines.push(`Nom: ${name || "—"}`);
+      lines.push(`Ville: ${city || "—"}`);
+      lines.push(`Détails: ${notes || "—"}`);
+      lines.push("");
+      lines.push("Merci de confirmer la disponibilité, le prix final et le délai.");
+
+      const text = encodeURIComponent(lines.join("\n"));
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+      window.open(url, "_blank", "noopener");
+    });
+
+    // Init
+    renderFilters();
+    renderProducts();
+    setBadge();
+  </script>
+</body>
+</html>
